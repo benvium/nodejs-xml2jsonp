@@ -15,6 +15,69 @@ To run the code, cd to the directory where you checked out the code and type
 
     node server.js
 
+
+API
+---
+
+There are currently two commands:
+
+###xml2jsonp - Convert an xml document to JSONP
+
+####Example with CURL
+    curl "http://your.node.installation.here/xml2jsonp?url=http://www.example.com/rss.xml&callback=myCallback"
+
+####Example with HTML and jQuery
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        // This is the example XML file..
+        var url = "http://www.example.com/rss.xml";
+
+        $("document").ready(function() {
+            $.getJSON(
+                    "http://your.node.installation.here/xml2jsonp?callback=?&url=" + url,
+                    function(data) {
+                        alert(JSON.stringify(data, null, 4));
+                    }
+            );
+        });
+    </script>
+    </head>
+    <body>
+    </body>
+    </html>
+
+###jsonjsonp - Convert a JSON document to JSONP (handy for getting around cross-domain restrictions)
+
+####Example with CURL
+    curl "http://your.node.installation.here/json2jsonp?url=http://www.example.com/doc.json&callback=myCallback"
+
+####Example with HTML and jQuery
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        // This is the example JSON file..
+        var url = "http://www.example.com/doc.json";
+
+        $("document").ready(function() {
+            $.getJSON(
+                    "http://your.node.installation.here/json2jsonp?callback=?&url=" + url,
+                    function(data) {
+                        alert(JSON.stringify(data, null, 4));
+                    }
+            );
+        });
+    </script>
+    </head>
+    <body>
+    </body>
+    </html>
 Licence
 -------
 
