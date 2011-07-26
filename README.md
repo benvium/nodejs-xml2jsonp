@@ -50,7 +50,7 @@ There are currently two commands:
     </body>
     </html>
 
-###jsonjsonp - Convert a JSON document to JSONP (handy for getting around cross-domain restrictions)
+###json2jsonp - Convert a JSON document to JSONP (handy for getting around cross-domain restrictions)
 
 ####Example with CURL
     curl "http://your.node.installation.here/json2jsonp?url=http://www.example.com/doc.json&callback=myCallback"
