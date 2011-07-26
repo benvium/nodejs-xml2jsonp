@@ -8,12 +8,12 @@ ajax's cross domain restrictions.
 To install this app on your node js server you'll need to add the _xml2js_ and _journey_ modules. I recommend npm as
 a way to do this.
 
- npm install -g xml2js
- npm install -g journey
+    npm install -g xml2js
+    npm install -g journey
 
 To run the code, cd to the directory where you checked out the code and type
 
- node server.js
+    node server.js
 
 Licence
 -------
