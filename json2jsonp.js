@@ -48,9 +48,13 @@ exports.get = function(res, xmlUrl, callbackFunctionName, callback) {
     var options = {
         host: urlIn.hostname,
         port: 80,
-        path: urlIn.pathname,
+        path: (urlIn.pathname ? urlIn.pathname : "" ) +
+              (urlIn.query ? "?"+urlIn.query : "") +
+              (urlIn.hash ? urlIn.hash : ""),
         "user-agent": "node.js"
     };
+    
+    
 
     httputils.downloadTextFile(options,
         function success(data) {
